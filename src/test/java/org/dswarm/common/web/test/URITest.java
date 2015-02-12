@@ -47,7 +47,7 @@ public class URITest {
 
 	private void testURI(final String uriString, final String namespaceURI, final String localName) {
 
-		final URI uri = new URI(uriString);
+		final URI uri = URI.create(uriString);
 
 		Assert.assertTrue(uri.hasNamespaceURI());
 		Assert.assertTrue(uri.hasLocalName());
