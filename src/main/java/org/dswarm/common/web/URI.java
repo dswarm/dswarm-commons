@@ -15,75 +15,74 @@
  */
 package org.dswarm.common.web;
 
+import java.util.Optional;
+
 /**
  * @author tgaengler
  */
 public class URI {
 
-	public static final String HASH  = "#";
-	public static final String SLASH = "/";
+	public static final char HASH  = '#';
+	public static final char SLASH = '/';
 
-	private final String localName;
-	private final String namespaceURI;
-	private final String uriString;
+	private final Optional<String> localName;
+	private final Optional<String> namespaceURI;
+	private final String fullUri;
 
-	public URI(final String uriStringArg) {
+	private URI(final String localName, final String namespaceURI) {
+		this(localName, Optional.ofNullable(namespaceURI).filter(s -> !s.isEmpty()));
+	}
 
-		// TODO: do parameter check
+	private URI(final String localName, final Optional<String> namespaceURI) {
+		this(Optional.ofNullable(localName).filter(s -> !s.isEmpty()), namespaceURI);
+	}
 
-		uriString = uriStringArg;
-
-		final String lastPartDelimiter;
-
-		if (uriString.lastIndexOf(HASH) > 0) {
-
-			lastPartDelimiter = HASH;
-		} else if (uriString.lastIndexOf(SLASH) > 0) {
-
-			lastPartDelimiter = SLASH;
-		} else {
-
-			lastPartDelimiter = null;
-		}
-
-		if (lastPartDelimiter != null) {
-
-			localName = uriString.substring(uriString.lastIndexOf(lastPartDelimiter) + 1, uriString.length());
-			namespaceURI = uriString.substring(0, uriString.lastIndexOf(lastPartDelimiter) + 1);
-		} else {
-
-			localName = uriString;
-			namespaceURI = null;
-		}
+	private URI(final Optional<String> localName, final Optional<String> namespaceURI) {
+		this.localName = localName;
+		this.namespaceURI = namespaceURI;
+		fullUri = namespaceURI.orElse("") + localName.orElse("");
 	}
 
 	public boolean hasNamespaceURI() {
-
-		return hasPart(namespaceURI);
+		return namespaceURI.isPresent();
 	}
 
 	public boolean hasLocalName() {
-
-		return hasPart(localName);
+		return localName.isPresent();
 	}
 
 	public String getLocalName() {
-
-		return localName;
+		return localName.get();
 	}
 
 	public String getNamespaceURI() {
-
-		return namespaceURI;
-	}
-
-	private boolean hasPart(final String uriPart) {
-
-		return uriPart != null && !uriPart.trim().isEmpty();
+		return namespaceURI.get();
 	}
 
 	@Override public String toString() {
+		return fullUri;
+	}
 
-		return uriString;
+	public static URI create(final String uriString) {
+		return Optional
+				.ofNullable(uriString)
+				.map(URI::parse)
+				.orElseGet(() -> new URI(Optional.empty(), Optional.empty()));
+	}
+
+	private static URI parse(final String uri) {
+		return firstLastIndexOf(uri, HASH, SLASH)
+				.map(idx      -> new URI(uri.substring(idx + 1), uri.substring(0, idx + 1)))
+				.orElseGet(() -> new URI(uri, Optional.empty()));
+	}
+
+	private static Optional<Integer> firstLastIndexOf(final String haystack, final char... needles) {
+		for (char needle : needles) {
+			final int index = haystack.lastIndexOf(needle);
+			if (index >= 0) {
+				return Optional.of(index);
+			}
+		}
+		return Optional.empty();
 	}
 }
