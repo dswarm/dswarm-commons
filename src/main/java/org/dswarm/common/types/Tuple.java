@@ -15,11 +15,12 @@
  */
 package org.dswarm.common.types;
 
+import java.util.Objects;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.google.common.base.Preconditions;
 
 /**
  * @author phorn
@@ -39,8 +40,9 @@ public class Tuple<V1, V2> {
 
 	@JsonCreator
 	public Tuple(@JsonProperty("v1") final V1 v1, @JsonProperty("v2") final V2 v2) {
-		this.v1 = Preconditions.checkNotNull(v1);
-		this.v2 = Preconditions.checkNotNull(v2);
+
+		this.v1 = Objects.requireNonNull(v1);
+		this.v2 = Objects.requireNonNull(v2);
 	}
 
 	public V1 v1() {
