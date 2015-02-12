@@ -39,6 +39,7 @@
 		<javax.ws.rs-api.version>2.0</javax.ws.rs-api.version>
 		<slf4j-api.version>1.7.10</slf4j-api.version>
 		<jena.version>2.12.0</jena.version>
+		<junit.version>4.11</junit.version>
 	</properties>
 
 	<build>
@@ -184,6 +185,12 @@
 					<groupId>org.slf4j</groupId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
