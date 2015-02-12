@@ -20,15 +20,18 @@ package org.dswarm.common.web;
  */
 public class URI {
 
-	public static final  String HASH                = "#";
-	public static final  String SLASH               = "/";
+	public static final String HASH  = "#";
+	public static final String SLASH = "/";
 
 	private final String localName;
 	private final String namespaceURI;
+	private final String uriString;
 
-	public URI(final String uriString) {
+	public URI(final String uriStringArg) {
 
 		// TODO: do parameter check
+
+		uriString = uriStringArg;
 
 		final String lastPartDelimiter;
 
@@ -77,5 +80,10 @@ public class URI {
 	private boolean hasPart(final String uriPart) {
 
 		return uriPart != null && !uriPart.trim().isEmpty();
+	}
+
+	@Override public String toString() {
+
+		return uriString;
 	}
 }

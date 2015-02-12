@@ -53,5 +53,6 @@ public class URITest {
 		Assert.assertTrue(uri.hasLocalName());
 		Assert.assertEquals(namespaceURI, uri.getNamespaceURI());
 		Assert.assertEquals(localName, uri.getLocalName());
+		Assert.assertEquals(uriString, uri.toString());
 	}
 }
