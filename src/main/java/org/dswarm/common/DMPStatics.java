@@ -1,4 +1,19 @@
 /**
+ * Copyright (C) 2013 – 2015 SLUB Dresden & Avantgarde Labs GmbH (<code@dswarm.org>)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
  * This file is part of d:swarm graph extension.
  *
  * d:swarm graph extension is free software: you can redistribute it and/or modify
@@ -26,7 +41,7 @@ public interface DMPStatics {
 	/**
 	 * The delimiter of an attribute path.
 	 */
-	public static final Character	ATTRIBUTE_DELIMITER	= '\u001E';
+	public static final Character ATTRIBUTE_DELIMITER = '\u001E';
 
 	public static final String RECORD_CLASS_URI_IDENTIFIER = "record_class_uri";
 
@@ -37,4 +52,8 @@ public interface DMPStatics {
 	public static final String ROOT_ATTRIBUTE_PATH_IDENTIFIER = "root_attribute_path";
 
 	public static final String RECORD_TAG_IDENTIFIER = "record_tag";
+
+	public static final String ORIGINAL_DATA_TYPE_IDENTIFIER = "original_data_type";
+
+	public static final String XML_DATA_TYPE = "xml";
 }
