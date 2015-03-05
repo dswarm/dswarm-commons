@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2013 – 2015 SLUB Dresden & Avantgarde Labs GmbH (<code@dswarm.org>)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 /**
  * This file is part of d:swarm graph extension.
  *
@@ -39,12 +38,12 @@ import java.util.Map;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.google.common.base.Optional;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import org.dswarm.common.DMPStatics;
-import org.dswarm.graph.model.Attribute;
-import org.dswarm.graph.model.AttributePath;
-import org.dswarm.graph.model.ContentSchema;
+import org.dswarm.common.model.Attribute;
+import org.dswarm.common.model.AttributePath;
+import org.dswarm.common.model.ContentSchema;
 
 /**
  * Created by tgaengler on 29/07/14.

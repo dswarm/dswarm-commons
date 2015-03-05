@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2013 – 2015 SLUB Dresden & Avantgarde Labs GmbH (<code@dswarm.org>)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 /**
  * This file is part of d:swarm graph extension.
  *
@@ -37,7 +36,7 @@ import java.util.LinkedList;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
-import org.dswarm.graph.model.deserializer.ContentSchemaDeserializer;
+import org.dswarm.common.model.deserializer.ContentSchemaDeserializer;
 
 /**
  * Created by tgaengler on 29/07/14.

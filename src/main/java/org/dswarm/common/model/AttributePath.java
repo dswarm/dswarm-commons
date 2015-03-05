@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2013 – 2015 SLUB Dresden & Avantgarde Labs GmbH (<code@dswarm.org>)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 /**
  * This file is part of d:swarm graph extension.
  *
@@ -34,7 +33,7 @@ package org.dswarm.common.model;
 
 import java.util.LinkedList;
 
-import org.dswarm.graph.model.util.AttributePathUtil;
+import org.dswarm.common.model.util.AttributePathUtil;
 
 /**
  * Created by tgaengler on 29/07/14.

@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2013 – 2015 SLUB Dresden & Avantgarde Labs GmbH (<code@dswarm.org>)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 /**
  * This file is part of d:swarm graph extension.
  *
@@ -43,17 +42,17 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
 
-import org.dswarm.graph.model.Attribute;
-import org.dswarm.graph.model.AttributePath;
-import org.dswarm.graph.model.ContentSchema;
-import org.dswarm.graph.model.util.AttributePathUtil;
+import org.dswarm.common.model.Attribute;
+import org.dswarm.common.model.AttributePath;
+import org.dswarm.common.model.ContentSchema;
+import org.dswarm.common.model.util.AttributePathUtil;
 
 /**
  * Created by tgaengler on 29/07/14.
  */
 public class ContentSchemaDeserializer extends JsonDeserializer<ContentSchema> {
 
-	private Map<String, Attribute> attributeMap = new HashMap<>();
+	private Map<String, Attribute>     attributeMap     = new HashMap<>();
 	private Map<String, AttributePath> attributePathMap = new HashMap<>();
 
 	@Override
@@ -86,6 +85,5 @@ public class ContentSchemaDeserializer extends JsonDeserializer<ContentSchema> {
 
 		return new ContentSchema(recordIdentifierAttributePath, keyAttributePaths, valueAttributePath);
 	}
-
 
 }
