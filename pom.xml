@@ -19,7 +19,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.dswarm</groupId>
   <artifactId>common</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.2-SNAPSHOT</version>
 
   <name>d:swarm - common</name>
   <description>utils commonly used</description>
@@ -42,6 +42,7 @@
 		<version.guava>18.0</version.guava>
 		<version.jackson>2.5.0</version.jackson>
 		<junit.version>4.11</junit.version>
+		<version.apache.commons>3.3.2</version.apache.commons>
 	</properties>
 
 	<build>
@@ -198,6 +199,16 @@
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${version.guava}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${version.apache.commons}</version>
 		</dependency>
 	</dependencies>
 
