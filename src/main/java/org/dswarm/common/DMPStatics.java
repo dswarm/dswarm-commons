@@ -56,4 +56,6 @@ public interface DMPStatics {
 	public static final String ORIGINAL_DATA_TYPE_IDENTIFIER = "original_data_type";
 
 	public static final String XML_DATA_TYPE = "xml";
+
+	public static final String AT_MOST_IDENTIFIER = "at_most";
 }
