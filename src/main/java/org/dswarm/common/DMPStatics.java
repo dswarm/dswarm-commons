@@ -47,6 +47,10 @@ public interface DMPStatics {
 
 	public static final String DATA_MODEL_URI_IDENTIFIER = "data_model_uri";
 
+	public static final String CONTENT_SCHEMA_IDENTIFIER = "content_schema";
+
+	public static final String DEPRECATE_MISSING_RECORDS_IDENTIFIER = "deprecate_missing_records";
+
 	public static final String VERSION_IDENTIFIER = "version";
 
 	public static final String ROOT_ATTRIBUTE_PATH_IDENTIFIER = "root_attribute_path";
