@@ -45,6 +45,12 @@ public interface DMPStatics {
 
 	public static final String RECORD_CLASS_URI_IDENTIFIER = "record_class_uri";
 
+	public static final String RECORD_URI_IDENTIFIER = "record_uri";
+
+	public static final String RECORD_ID_IDENTIFIER = "record_id";
+
+	public static final String LEGACY_RECORD_IDENTIFIER_ATTRIBUTE_PATH = "legacy_record_identifier_attribute_path";
+
 	public static final String DATA_MODEL_URI_IDENTIFIER = "data_model_uri";
 
 	public static final String CONTENT_SCHEMA_IDENTIFIER = "content_schema";
