@@ -51,6 +51,10 @@ public interface DMPStatics {
 
 	public static final String LEGACY_RECORD_IDENTIFIER_ATTRIBUTE_PATH = "legacy_record_identifier_attribute_path";
 
+	public static final String KEY_ATTRIBUTE_PATH_IDENTIFIER = "key_attribute_path";
+
+	public static final String SEARCH_VALUE_IDENTIFIER = "search_value";
+
 	public static final String DATA_MODEL_URI_IDENTIFIER = "data_model_uri";
 
 	public static final String CONTENT_SCHEMA_IDENTIFIER = "content_schema";
