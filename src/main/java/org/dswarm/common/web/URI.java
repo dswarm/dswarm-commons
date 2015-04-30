@@ -15,6 +15,8 @@
  */
 package org.dswarm.common.web;
 
+import org.dswarm.common.types.Tuple;
+
 /**
  * @author tgaengler
  */
@@ -33,28 +35,9 @@ public class URI {
 
 		uriString = uriStringArg;
 
-		final String lastPartDelimiter;
-
-		if (uriString.lastIndexOf(HASH) > 0) {
-
-			lastPartDelimiter = HASH;
-		} else if (uriString.lastIndexOf(SLASH) > 0) {
-
-			lastPartDelimiter = SLASH;
-		} else {
-
-			lastPartDelimiter = null;
-		}
-
-		if (lastPartDelimiter != null) {
-
-			localName = uriString.substring(uriString.lastIndexOf(lastPartDelimiter) + 1, uriString.length());
-			namespaceURI = uriString.substring(0, uriString.lastIndexOf(lastPartDelimiter) + 1);
-		} else {
-
-			localName = uriString;
-			namespaceURI = null;
-		}
+		final Tuple<String, String> uriParts = determineParts(uriString);
+		namespaceURI = uriParts.v1();
+		localName = uriParts.v2();
 	}
 
 	public boolean hasNamespaceURI() {
@@ -85,5 +68,42 @@ public class URI {
 	@Override public String toString() {
 
 		return uriString;
+	}
+
+	/**
+	 *
+	 *
+	 * @param uriString
+	 * @return a tuple where the first part ist the namespace URI and the second part ist the local name
+	 */
+	public static Tuple<String, String> determineParts(final String uriString) {
+
+		final String lastPartDelimiter;
+
+		if (uriString.lastIndexOf(HASH) > 0) {
+
+			lastPartDelimiter = HASH;
+		} else if (uriString.lastIndexOf(SLASH) > 0) {
+
+			lastPartDelimiter = SLASH;
+		} else {
+
+			lastPartDelimiter = null;
+		}
+
+		final String localName;
+		final String namespaceURI;
+
+		if (lastPartDelimiter != null) {
+
+			localName = uriString.substring(uriString.lastIndexOf(lastPartDelimiter) + 1, uriString.length());
+			namespaceURI = uriString.substring(0, uriString.lastIndexOf(lastPartDelimiter) + 1);
+		} else {
+
+			localName = uriString;
+			namespaceURI = "";
+		}
+
+		return Tuple.tuple(namespaceURI, localName);
 	}
 }

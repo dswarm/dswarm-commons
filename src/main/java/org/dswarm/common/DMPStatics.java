@@ -72,4 +72,6 @@ public interface DMPStatics {
 	public static final String XML_DATA_TYPE = "xml";
 
 	public static final String AT_MOST_IDENTIFIER = "at_most";
+
+	public static final String ENABLE_VERSIONING_IDENTIFIER = "enable_versioning";
 }
