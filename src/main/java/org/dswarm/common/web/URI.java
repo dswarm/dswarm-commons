@@ -101,7 +101,7 @@ public class URI {
 		} else {
 
 			localName = uriString;
-			namespaceURI = null;
+			namespaceURI = "";
 		}
 
 		return Tuple.tuple(namespaceURI, localName);
