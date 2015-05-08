@@ -74,4 +74,6 @@ public interface DMPStatics {
 	public static final String AT_MOST_IDENTIFIER = "at_most";
 
 	public static final String ENABLE_VERSIONING_IDENTIFIER = "enable_versioning";
+
+	public static final String ALL_VERSIONS_IDENTIFIER = "all_versions";
 }
