@@ -24,11 +24,15 @@
   <name>d:swarm - common</name>
   <description>utils commonly used</description>
 
+	<prerequisites>
+		<maven>3.0.4</maven>
+	</prerequisites>
+
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.source.version>1.7</java.source.version>
-		<java.target.version>1.7</java.target.version>
+		<java.source.version>1.8</java.source.version>
+		<java.target.version>1.8</java.target.version>
 		<maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
 		<maven-assembly-plugin.version>2.5.3</maven-assembly-plugin.version>
 		<maven-resources-plugin.version>2.7</maven-resources-plugin.version>
@@ -37,12 +41,16 @@
 		<maven-clean-plugin.version>2.6.1</maven-clean-plugin.version>
 		<maven-release-plugin.version>2.5.1</maven-release-plugin.version>
 		<javax.ws.rs-api.version>2.0</javax.ws.rs-api.version>
-		<slf4j-api.version>1.7.10</slf4j-api.version>
-		<jena.version>2.12.0</jena.version>
+		<slf4j-api.version>1.7.12</slf4j-api.version>
+		<jena.version>2.13.0</jena.version>
 		<version.guava>18.0</version.guava>
 		<version.jackson>2.5.0</version.jackson>
-		<junit.version>4.11</junit.version>
-		<version.apache.commons>3.3.2</version.apache.commons>
+		<junit.version>4.12</junit.version>
+		<version.apache.commons>3.4</version.apache.commons>
+		<version.maven.plugin.version>2.1</version.maven.plugin.version>
+		<version.maven.plugin.jar>2.6</version.maven.plugin.jar>
+		<version.maven.plugin.site>3.4</version.maven.plugin.site>
+		<version.maven.plugin.deploy>2.8.2</version.maven.plugin.deploy>
 	</properties>
 
 	<build>
@@ -135,6 +143,29 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<version>${version.maven.plugin.version}</version>
+				<configuration>
+					<allowSnapshots>false</allowSnapshots>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>${version.maven.plugin.jar}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>${version.maven.plugin.site}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>${version.maven.plugin.deploy}</version>
+			</plugin>
 		</plugins>
 		<resources>
 			<resource>
@@ -149,6 +180,16 @@
 			</testResource>
 		</testResources>
 	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<version>${version.maven.plugin.version}</version>
+			</plugin>
+		</plugins>
+	</reporting>
 
   	<distributionManagement>
 		<repository>
