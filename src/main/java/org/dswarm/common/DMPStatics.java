@@ -41,39 +41,41 @@ public interface DMPStatics {
 	/**
 	 * The delimiter of an attribute path.
 	 */
-	public static final Character ATTRIBUTE_DELIMITER = '\u001E';
+	Character ATTRIBUTE_DELIMITER = '\u001E';
 
-	public static final String RECORD_CLASS_URI_IDENTIFIER = "record_class_uri";
+	String RECORD_CLASS_URI_IDENTIFIER = "record_class_uri";
 
-	public static final String RECORD_URI_IDENTIFIER = "record_uri";
+	String RECORD_URI_IDENTIFIER = "record_uri";
 
-	public static final String RECORD_ID_IDENTIFIER = "record_id";
+	String RECORD_ID_IDENTIFIER = "record_id";
 
-	public static final String LEGACY_RECORD_IDENTIFIER_ATTRIBUTE_PATH = "legacy_record_identifier_attribute_path";
+	String LEGACY_RECORD_IDENTIFIER_ATTRIBUTE_PATH = "legacy_record_identifier_attribute_path";
 
-	public static final String KEY_ATTRIBUTE_PATH_IDENTIFIER = "key_attribute_path";
+	String KEY_ATTRIBUTE_PATH_IDENTIFIER = "key_attribute_path";
 
-	public static final String SEARCH_VALUE_IDENTIFIER = "search_value";
+	String SEARCH_VALUE_IDENTIFIER = "search_value";
 
-	public static final String DATA_MODEL_URI_IDENTIFIER = "data_model_uri";
+	String DATA_MODEL_URI_IDENTIFIER = "data_model_uri";
 
-	public static final String CONTENT_SCHEMA_IDENTIFIER = "content_schema";
+	String RECORDS_IDENTIFIER = "records";
 
-	public static final String DEPRECATE_MISSING_RECORDS_IDENTIFIER = "deprecate_missing_records";
+	String CONTENT_SCHEMA_IDENTIFIER = "content_schema";
 
-	public static final String VERSION_IDENTIFIER = "version";
+	String DEPRECATE_MISSING_RECORDS_IDENTIFIER = "deprecate_missing_records";
 
-	public static final String ROOT_ATTRIBUTE_PATH_IDENTIFIER = "root_attribute_path";
+	String VERSION_IDENTIFIER = "version";
 
-	public static final String RECORD_TAG_IDENTIFIER = "record_tag";
+	String ROOT_ATTRIBUTE_PATH_IDENTIFIER = "root_attribute_path";
 
-	public static final String ORIGINAL_DATA_TYPE_IDENTIFIER = "original_data_type";
+	String RECORD_TAG_IDENTIFIER = "record_tag";
 
-	public static final String XML_DATA_TYPE = "xml";
+	String ORIGINAL_DATA_TYPE_IDENTIFIER = "original_data_type";
 
-	public static final String AT_MOST_IDENTIFIER = "at_most";
+	String XML_DATA_TYPE = "xml";
 
-	public static final String ENABLE_VERSIONING_IDENTIFIER = "enable_versioning";
+	String AT_MOST_IDENTIFIER = "at_most";
 
-	public static final String ALL_VERSIONS_IDENTIFIER = "all_versions";
+	String ENABLE_VERSIONING_IDENTIFIER = "enable_versioning";
+
+	String ALL_VERSIONS_IDENTIFIER = "all_versions";
 }
