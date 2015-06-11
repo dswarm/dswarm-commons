@@ -62,12 +62,8 @@ public class Attribute {
 
 		final Attribute attribute = (Attribute) o;
 
-		if (!uri.equals(attribute.uri)) {
+		return uri.equals(attribute.uri);
 
-			return false;
-		}
-
-		return true;
 	}
 
 	@Override

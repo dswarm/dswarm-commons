@@ -51,6 +51,7 @@
 		<version.maven.plugin.jar>2.6</version.maven.plugin.jar>
 		<version.maven.plugin.site>3.4</version.maven.plugin.site>
 		<version.maven.plugin.deploy>2.8.2</version.maven.plugin.deploy>
+		<version.jsonassert>1.2.3</version.jsonassert>
 	</properties>
 
 	<build>
@@ -250,6 +251,12 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 			<version>${version.apache.commons}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.skyscreamer</groupId>
+			<artifactId>jsonassert</artifactId>
+			<version>${version.jsonassert}</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 

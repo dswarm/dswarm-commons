@@ -35,13 +35,16 @@ import java.util.LinkedList;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import org.dswarm.common.model.deserializer.ContentSchemaDeserializer;
+import org.dswarm.common.model.serializer.ContentSchemaSerializer;
 
 /**
  * Created by tgaengler on 29/07/14.
  */
 @JsonDeserialize(using = ContentSchemaDeserializer.class)
+@JsonSerialize(using = ContentSchemaSerializer.class)
 public class ContentSchema {
 
 	@JsonProperty("record_identifier_attribute_path")
@@ -88,18 +91,13 @@ public class ContentSchema {
 
 		final ContentSchema that = (ContentSchema) o;
 
-		if (keyAttributePaths != null ? !keyAttributePaths.equals(that.keyAttributePaths) : that.keyAttributePaths != null) {
-			return false;
-		}
-		if (recordIdentifierAttributePath != null ? !recordIdentifierAttributePath.equals(that.recordIdentifierAttributePath)
-				: that.recordIdentifierAttributePath != null) {
-			return false;
-		}
-		if (valueAttributePath != null ? !valueAttributePath.equals(that.valueAttributePath) : that.valueAttributePath != null) {
-			return false;
-		}
+		return !(keyAttributePaths != null ? !keyAttributePaths.equals(that.keyAttributePaths) : that.keyAttributePaths != null) && !(
+				recordIdentifierAttributePath != null ?
+						!recordIdentifierAttributePath.equals(that.recordIdentifierAttributePath) :
+						that.recordIdentifierAttributePath != null) && !(valueAttributePath != null ?
+				!valueAttributePath.equals(that.valueAttributePath) :
+				that.valueAttributePath != null);
 
-		return true;
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2013 – 2015 SLUB Dresden & Avantgarde Labs GmbH (<code@dswarm.org>)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,18 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.dswarm.common.web.test;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.LinkedList;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
+import org.json.JSONException;
 import org.junit.Assert;
 import org.junit.Test;
+import org.skyscreamer.jsonassert.JSONAssert;
 
 import org.dswarm.common.model.Attribute;
 import org.dswarm.common.model.AttributePath;
@@ -41,6 +44,48 @@ public class ContentSchemaTest {
 	public static final String HTTP_WWW_DDB_DE_PROFESSIONELL_MABXML_MABXML_1_XSD_ID   = "http://www.ddb.de/professionell/mabxml/mabxml-1.xsd#id";
 	public static final String HTTP_WWW_DDB_DE_PROFESSIONELL_MABXML_MABXML_1_XSD_NR   = "http://www.ddb.de/professionell/mabxml/mabxml-1.xsd#nr";
 	public static final String HTTP_WWW_DDB_DE_PROFESSIONELL_MABXML_MABXML_1_XSD_IND = "http://www.ddb.de/professionell/mabxml/mabxml-1.xsd#ind";
+
+	@Test
+	public void serializeContentSchemaTest() throws IOException, JSONException {
+
+		final Attribute mabxmlFeld = new Attribute(HTTP_WWW_DDB_DE_PROFESSIONELL_MABXML_MABXML_1_XSD_FELD);
+		final Attribute mabxmlId = new Attribute(HTTP_WWW_DDB_DE_PROFESSIONELL_MABXML_MABXML_1_XSD_ID);
+		final Attribute mabxmlNr = new Attribute(HTTP_WWW_DDB_DE_PROFESSIONELL_MABXML_MABXML_1_XSD_NR);
+		final Attribute mabxmlInd = new Attribute(HTTP_WWW_DDB_DE_PROFESSIONELL_MABXML_MABXML_1_XSD_IND);
+		final Attribute rdfValue = new Attribute(HTTP_WWW_W3_ORG_1999_02_22_RDF_SYNTAX_NS_VALUE);
+
+		final LinkedList<Attribute> recordIdentifierAPList = new LinkedList<>();
+		recordIdentifierAPList.add(mabxmlId);
+		final AttributePath recordIdentifierAP = new AttributePath(recordIdentifierAPList);
+
+		final LinkedList<Attribute> keyAP1List = new LinkedList<>();
+		keyAP1List.add(mabxmlFeld);
+		keyAP1List.add(mabxmlNr);
+		final AttributePath keyAP1 = new AttributePath(keyAP1List);
+
+		final LinkedList<Attribute> keyAP2List = new LinkedList<>();
+		keyAP2List.add(mabxmlFeld);
+		keyAP2List.add(mabxmlInd);
+		final AttributePath keyAP2 = new AttributePath(keyAP2List);
+
+		final LinkedList<Attribute> valueAPList = new LinkedList<>();
+		valueAPList.add(mabxmlFeld);
+		valueAPList.add(rdfValue);
+		final AttributePath valueAP = new AttributePath(valueAPList);
+
+		final LinkedList<AttributePath> keyAPs = new LinkedList<>();
+		keyAPs.add(keyAP1);
+		keyAPs.add(keyAP2);
+
+		final ContentSchema contentSchema = new ContentSchema(recordIdentifierAP, keyAPs, valueAP);
+
+		final String contentSchemaJSONString = objectMapper.writeValueAsString(contentSchema);
+
+		final URL fileURL = Resources.getResource("contentschema.json");
+		final String expectedContentSchemaJSONString = Resources.toString(fileURL, Charsets.UTF_8);
+
+		JSONAssert.assertEquals(expectedContentSchemaJSONString, contentSchemaJSONString, false);
+	}
 
 	@Test
 	public void deserializeContentSchemaTest() throws IOException {
