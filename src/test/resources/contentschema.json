@@ -1,0 +1,8 @@
+{
+  "record_identifier_attribute_path": "http://www.ddb.de/professionell/mabxml/mabxml-1.xsd#id",
+  "key_attribute_paths": [
+    "http://www.ddb.de/professionell/mabxml/mabxml-1.xsd#feld\u001ehttp://www.ddb.de/professionell/mabxml/mabxml-1.xsd#nr",
+    "http://www.ddb.de/professionell/mabxml/mabxml-1.xsd#feld\u001ehttp://www.ddb.de/professionell/mabxml/mabxml-1.xsd#ind"
+  ],
+  "value_attribute_path": "http://www.ddb.de/professionell/mabxml/mabxml-1.xsd#feld\u001ehttp://www.w3.org/1999/02/22-rdf-syntax-ns#value"
+}

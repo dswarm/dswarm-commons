@@ -46,6 +46,7 @@ import org.dswarm.common.model.Attribute;
 import org.dswarm.common.model.AttributePath;
 import org.dswarm.common.model.ContentSchema;
 import org.dswarm.common.model.util.AttributePathUtil;
+import org.dswarm.common.model.util.ContentSchemaUtil;
 
 /**
  * Created by tgaengler on 29/07/14.
@@ -72,15 +73,15 @@ public class ContentSchemaDeserializer extends JsonDeserializer<ContentSchema> {
 			return null;
 		}
 
-		final JsonNode recordIdentifierAttributePathNode = node.get("record_identifier_attribute_path");
+		final JsonNode recordIdentifierAttributePathNode = node.get(ContentSchemaUtil.RECORD_IDENTIFIER_ATTRIBUTE_PATH);
 		final AttributePath recordIdentifierAttributePath = AttributePathUtil.parseAttributePathNode(recordIdentifierAttributePathNode, attributeMap,
 				attributePathMap);
 
-		final JsonNode keyAttributePathsNode = node.get("key_attribute_paths");
+		final JsonNode keyAttributePathsNode = node.get(ContentSchemaUtil.KEY_ATTRIBUTE_PATHS);
 		final LinkedList<AttributePath> keyAttributePaths = AttributePathUtil.parseAttributePathsNode(keyAttributePathsNode, attributeMap,
 				attributePathMap);
 
-		final JsonNode valueAttributePathNode = node.get("value_attribute_path");
+		final JsonNode valueAttributePathNode = node.get(ContentSchemaUtil.VALUE_ATTRIBUTE_PATH);
 		final AttributePath valueAttributePath = AttributePathUtil.parseAttributePathNode(valueAttributePathNode, attributeMap, attributePathMap);
 
 		return new ContentSchema(recordIdentifierAttributePath, keyAttributePaths, valueAttributePath);
