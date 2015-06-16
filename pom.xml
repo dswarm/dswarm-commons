@@ -52,6 +52,7 @@
 		<version.maven.plugin.site>3.4</version.maven.plugin.site>
 		<version.maven.plugin.deploy>2.8.2</version.maven.plugin.deploy>
 		<version.jsonassert>1.2.3</version.jsonassert>
+		<aalto-xml.version>0.9.11</aalto-xml.version>
 	</properties>
 
 	<build>
@@ -257,6 +258,11 @@
 			<artifactId>jsonassert</artifactId>
 			<version>${version.jsonassert}</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml</groupId>
+			<artifactId>aalto-xml</artifactId>
+			<version>${aalto-xml.version}</version>
 		</dependency>
 	</dependencies>
 
