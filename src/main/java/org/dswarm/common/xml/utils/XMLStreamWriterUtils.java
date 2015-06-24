@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2013 – 2015 SLUB Dresden & Avantgarde Labs GmbH (<code@dswarm.org>)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 /**
  * This file is part of d:swarm graph extension.
  *
@@ -38,8 +37,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
 
-import com.fasterxml.aalto.util.XmlChars;
-
 import org.dswarm.common.web.URI;
 
 /**
@@ -49,8 +46,6 @@ public final class XMLStreamWriterUtils {
 
 	private static final AtomicInteger	counter					= new AtomicInteger(0);
 	private static final String			NAMESPACE_PREFIX_BASE	= "ns";
-
-	private static final char			DEFAULT_NAME_CHAR		= '-';
 
 	public static void writeXMLElementTag(final XMLStreamWriter writer, final URI uri, final Map<String, String> namespacesPrefixesMap,
 			final Map<String, String> nameMap, final boolean isElementOpen) throws XMLStreamException {
@@ -125,28 +120,7 @@ public final class XMLStreamWriterUtils {
 			return nameMap.get(localName);
 		}
 
-		final StringBuilder sb = new StringBuilder();
-
-		final int length = localName.length();
-
-		for (int i = 0; i < length; i++) {
-
-			final int characterInt = (int) localName.charAt(i);
-
-			// TODO: change to 11, when we shall produce XML 1.1
-			if (XmlChars.is10NameChar(characterInt)) {
-
-				final char character = localName.charAt(i);
-
-				sb.append(character);
-			} else {
-
-				// append the default name char instead of the invalid one
-				sb.append(DEFAULT_NAME_CHAR);
-			}
-		}
-
-		final String xmlName = sb.toString();
+		final String xmlName = XMLUtils.getXMLName(localName);
 
 		nameMap.put(localName, xmlName);
 
