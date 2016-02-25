@@ -15,23 +15,20 @@
  */
 package org.dswarm.common.web.test;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.LinkedList;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
+import org.dswarm.common.model.Attribute;
+import org.dswarm.common.model.AttributePath;
+import org.dswarm.common.model.ContentSchema;
 import org.json.JSONException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
 
-import org.dswarm.common.model.Attribute;
-import org.dswarm.common.model.AttributePath;
-import org.dswarm.common.model.ContentSchema;
+import java.io.IOException;
+import java.net.URL;
+import java.util.LinkedList;
 
 /**
  * @author tgaengler
