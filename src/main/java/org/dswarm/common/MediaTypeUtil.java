@@ -30,12 +30,16 @@ public class MediaTypeUtil {
 	public static final String		TURTLE			= "text/turtle";
 	public static final MediaType	TRIG_TYPE		= new MediaType("application", "trig");
 	public static final String		TRIG			= "application/trig";
+	public static final MediaType	TRIX_TYPE		= new MediaType("application", "trix");
+	public static final String		TRIX			= "application/trix";
 	public static final MediaType	N_QUADS_TYPE	= new MediaType("application", "n-quads");
 	public static final String		N_QUADS			= "application/n-quads";
 	public static final MediaType	N_TRIPLES_TYPE	= new MediaType("application", "n-triples");
 	public static final String		N_TRIPLES			= "application/n-triples";
 	public static final MediaType	RDF_XML_TYPE	= new MediaType("application", "rdf+xml");
 	public static final String		RDF_XML			= "application/rdf+xml";
+	public static final MediaType	RDF_THRIFT_TYPE	= new MediaType("application", "rdf+thrift");
+	public static final String		RDF_THRIFT			= "application/rdf+thrift";
 	public static final MediaType	N3_TYPE			= new MediaType("text", "n3");
 	public static final String		N3				= "text/n3";
 
