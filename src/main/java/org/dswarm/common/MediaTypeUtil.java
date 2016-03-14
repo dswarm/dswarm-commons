@@ -22,34 +22,40 @@ import org.slf4j.LoggerFactory;
 
 public class MediaTypeUtil {
 
-	private static final Logger		LOG				= LoggerFactory.getLogger(MediaTypeUtil.class);
+	private static final Logger LOG = LoggerFactory.getLogger(MediaTypeUtil.class);
 
 	// using W3C MIME type standards which partly differ from {@link org.apache.jena.riot.Lang} (see TriG and N3 MIME types in
 	// Lang)
-	public static final MediaType	TURTLE_TYPE		= new MediaType("text", "turtle");
-	public static final String		TURTLE			= "text/turtle";
-	public static final MediaType	TRIG_TYPE		= new MediaType("application", "trig");
-	public static final String		TRIG			= "application/trig";
-	public static final MediaType	TRIX_TYPE		= new MediaType("application", "trix");
-	public static final String		TRIX			= "application/trix";
-	public static final MediaType	N_QUADS_TYPE	= new MediaType("application", "n-quads");
-	public static final String		N_QUADS			= "application/n-quads";
-	public static final MediaType	N_TRIPLES_TYPE	= new MediaType("application", "n-triples");
-	public static final String		N_TRIPLES			= "application/n-triples";
-	public static final MediaType	RDF_XML_TYPE	= new MediaType("application", "rdf+xml");
-	public static final String		RDF_XML			= "application/rdf+xml";
-	public static final MediaType	RDF_THRIFT_TYPE	= new MediaType("application", "rdf+thrift");
-	public static final String		RDF_THRIFT			= "application/rdf+thrift";
-	public static final MediaType	N3_TYPE			= new MediaType("text", "n3");
-	public static final String		N3				= "text/n3";
+	public static final MediaType TURTLE_TYPE = new MediaType("text", "turtle");
+	public static final String TURTLE = "text/turtle";
+	public static final String TURTLE_FILE_EXTENSION = "ttl";
+	public static final MediaType TRIG_TYPE = new MediaType("application", "trig");
+	public static final String TRIG = "application/trig";
+	public static final String TRIG_FILE_EXTENSION = "trig";
+	public static final MediaType TRIX_TYPE = new MediaType("application", "trix");
+	public static final String TRIX = "application/trix";
+	public static final String TRIX_FILE_EXTENSION = "trix";
+	public static final MediaType N_QUADS_TYPE = new MediaType("application", "n-quads");
+	public static final String N_QUADS = "application/n-quads";
+	public static final String N_QUADS_FILE_EXTENSION = "nq";
+	public static final MediaType N_TRIPLES_TYPE = new MediaType("application", "n-triples");
+	public static final String N_TRIPLES = "application/n-triples";
+	public static final String N_TRIPLES_FILE_EXTENSION = "nt";
+	public static final MediaType RDF_XML_TYPE = new MediaType("application", "rdf+xml");
+	public static final String RDF_XML = "application/rdf+xml";
+	public static final String RDF_XML_FILE_EXTENSION = "rdf";
+	public static final MediaType RDF_THRIFT_TYPE = new MediaType("application", "rdf+thrift");
+	public static final String RDF_THRIFT = "application/rdf+thrift";
+	public static final String RDF_THRIFT_FILE_EXTENSION = "rt";
+	public static final MediaType N3_TYPE = new MediaType("text", "n3");
+	public static final String N3 = "text/n3";
+	public static final String N3_FILE_EXTENSION = "n3";
 
 	/**
 	 * Hint: There is no LD+JSON parser in jena RIOT, maybe use this one if required:
 	 * http://mail-archives.apache.org/mod_mbox/jena-dev/201303.mbox/<513248F7.5010803@apache.org>
 	 */
-	public static final MediaType	JSONLD_TYPE		= new MediaType("application", "ld+json");
-
-	// public static final String JSONLD = "ld+json";
-
-
+	public static final MediaType JSONLD_TYPE = new MediaType("application", "ld+json");
+	public static final String JSONLD = "application/ld+json";
+	public static final String JSONLD_FILE_EXTENSION = "jsonld";
 }
