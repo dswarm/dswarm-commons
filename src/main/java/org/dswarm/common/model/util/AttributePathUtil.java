@@ -31,10 +31,7 @@
  */
 package org.dswarm.common.model.util;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ArrayNode;
@@ -68,6 +65,38 @@ public final class AttributePathUtil {
 
 				sb.append(DMPStatics.ATTRIBUTE_DELIMITER);
 			}
+		}
+
+		return sb.toString();
+	}
+
+	public static String generateAttributePath(final Collection<String> attributePath) {
+
+		if (null == attributePath) {
+
+			return null;
+		}
+
+		if (attributePath.isEmpty()) {
+
+			return null;
+		}
+
+		final StringBuilder sb = new StringBuilder();
+
+		boolean first = true;
+
+		for (final String attribute : attributePath) {
+
+			if (!first) {
+
+				sb.append(DMPStatics.ATTRIBUTE_DELIMITER);
+			} else {
+
+				first = false;
+			}
+
+			sb.append(attribute);
 		}
 
 		return sb.toString();
