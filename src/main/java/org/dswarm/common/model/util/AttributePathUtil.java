@@ -33,6 +33,7 @@ package org.dswarm.common.model.util;
 
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -50,7 +51,7 @@ import org.dswarm.common.model.ContentSchema;
  */
 public final class AttributePathUtil {
 
-	public static String generateAttributePath(final LinkedList<Attribute> attributes) {
+	public static String generateAttributePath(final List<Attribute> attributes) {
 
 		if (attributes == null || attributes.isEmpty()) {
 
