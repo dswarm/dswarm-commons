@@ -13,29 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/**
- * This file is part of d:swarm graph extension.
- *
- * d:swarm graph extension is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * d:swarm graph extension is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with d:swarm graph extension.  If not, see <http://www.gnu.org/licenses/>.
- */
 package org.dswarm.common.model.util;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.google.common.base.Optional;
 import org.apache.commons.lang3.StringUtils;
 
 import org.dswarm.common.DMPStatics;
@@ -104,23 +92,23 @@ public final class AttributePathUtil {
 
 	public static Optional<AttributePath> determineCommonAttributePath(final ContentSchema contentSchema) {
 
-		if(contentSchema.getKeyAttributePaths() == null && contentSchema.getValueAttributePath() == null) {
+		if (contentSchema.getKeyAttributePaths() == null && contentSchema.getValueAttributePath() == null) {
 
-			return Optional.absent();
+			return Optional.empty();
 		}
 
 		final Map<String, AttributePath> attributePaths = new HashMap<>();
 		final Map<String, Attribute> attributes = new HashMap<>();
 
-		if(contentSchema.getKeyAttributePaths() != null) {
+		if (contentSchema.getKeyAttributePaths() != null) {
 
-			for(final AttributePath attributePath : contentSchema.getKeyAttributePaths()) {
+			for (final AttributePath attributePath : contentSchema.getKeyAttributePaths()) {
 
 				fillMaps(attributePath, attributePaths, attributes);
 			}
 		}
 
-		if(contentSchema.getValueAttributePath() != null) {
+		if (contentSchema.getValueAttributePath() != null) {
 
 			fillMaps(contentSchema.getValueAttributePath(), attributePaths, attributes);
 		}
@@ -129,16 +117,16 @@ public final class AttributePathUtil {
 
 		final String commonAttributePathString = cleanCommonPrefix(commonPrefix);
 
-		if(attributePaths.containsKey(commonAttributePathString)) {
+		if (attributePaths.containsKey(commonAttributePathString)) {
 
-			return Optional.fromNullable(attributePaths.get(commonAttributePathString));
+			return Optional.ofNullable(attributePaths.get(commonAttributePathString));
 		}
 
 		final String[] attributeURIs = commonAttributePathString.split(DMPStatics.ATTRIBUTE_DELIMITER.toString());
 
 		final LinkedList<Attribute> apAttributes = new LinkedList<>();
 
-		for(final String attributeURI : attributeURIs) {
+		for (final String attributeURI : attributeURIs) {
 
 			final Attribute attribute = attributes.get(attributeURI);
 			apAttributes.add(attribute);
@@ -149,23 +137,23 @@ public final class AttributePathUtil {
 
 	public static LinkedList<AttributePath> parseAttributePathsNode(final JsonNode attributePathsNode) {
 
-		return  parseAttributePathsNode(attributePathsNode, null, null);
+		return parseAttributePathsNode(attributePathsNode, null, null);
 	}
 
 	public static LinkedList<AttributePath> parseAttributePathsNode(final JsonNode attributePathsNode, final Map<String, Attribute> attributeMap, final Map<String, AttributePath> attributePathMap) {
 
-		if(attributePathsNode == null || !ArrayNode.class.isInstance(attributePathsNode)) {
+		if (attributePathsNode == null || !ArrayNode.class.isInstance(attributePathsNode)) {
 
 			return null;
 		}
 
 		final LinkedList<AttributePath> attributePaths = new LinkedList<>();
 
-		for(final JsonNode attributePathNode : attributePathsNode) {
+		for (final JsonNode attributePathNode : attributePathsNode) {
 
 			final AttributePath attributePath = parseAttributePathNode(attributePathNode, attributeMap, attributePathMap);
 
-			if(attributePath != null) {
+			if (attributePath != null) {
 
 				attributePaths.add(attributePath);
 			}
@@ -200,7 +188,7 @@ public final class AttributePathUtil {
 
 		final String[] attributes = attributePathString.split(DMPStatics.ATTRIBUTE_DELIMITER.toString());
 
-		if(attributes.length <= 0) {
+		if (attributes.length <= 0) {
 
 			return null;
 		}
@@ -209,21 +197,21 @@ public final class AttributePathUtil {
 
 		for (final String attributeURI : attributes) {
 
-			final Attribute attribute = getOrCreateAttribute(attributeURI, Optional.fromNullable(attributeMap));
+			final Attribute attribute = getOrCreateAttribute(attributeURI, Optional.ofNullable(attributeMap));
 			attributeList.add(attribute);
 		}
 
-		return getOrCreateAttributePath(attributeList, Optional.fromNullable(attributePathMap));
+		return getOrCreateAttributePath(attributeList, Optional.ofNullable(attributePathMap));
 	}
 
 	private static Attribute getOrCreateAttribute(final String uri, final Optional<Map<String, Attribute>> optionalAttributeMap) {
 
-		if(!optionalAttributeMap.isPresent()) {
+		if (!optionalAttributeMap.isPresent()) {
 
 			return new Attribute(uri);
 		}
 
-		if(!optionalAttributeMap.get().containsKey(uri)) {
+		if (!optionalAttributeMap.get().containsKey(uri)) {
 
 			optionalAttributeMap.get().put(uri, new Attribute(uri));
 		}
@@ -233,14 +221,14 @@ public final class AttributePathUtil {
 
 	private static AttributePath getOrCreateAttributePath(final LinkedList<Attribute> attributePath, final Optional<Map<String, AttributePath>> optionalAttributePathMap) {
 
-		if(!optionalAttributePathMap.isPresent()) {
+		if (!optionalAttributePathMap.isPresent()) {
 
 			return new AttributePath(attributePath);
 		}
 
 		final String attributePathString = AttributePathUtil.generateAttributePath(attributePath);
 
-		if(!optionalAttributePathMap.get().containsKey(attributePathString)) {
+		if (!optionalAttributePathMap.get().containsKey(attributePathString)) {
 
 			optionalAttributePathMap.get().put(attributePathString, new AttributePath(attributePath));
 		}
@@ -249,7 +237,7 @@ public final class AttributePathUtil {
 	}
 
 	private static void fillMaps(final AttributePath attributePath, final Map<String, AttributePath> attributePaths,
-			final Map<String, Attribute> attributes) {
+	                             final Map<String, Attribute> attributes) {
 
 		attributePaths.put(attributePath.toString(), attributePath);
 
