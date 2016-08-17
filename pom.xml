@@ -44,7 +44,7 @@
 		<slf4j-api.version>1.7.21</slf4j-api.version>
 		<jena.version>3.1.0</jena.version>
 		<version.guava>19.0</version.guava>
-		<version.jackson>2.8.1</version.jackson>
+		<version.jackson>2.7.1</version.jackson>
 		<junit.version>4.12</junit.version>
 		<version.apache.commons>3.4</version.apache.commons>
 		<version.maven.plugin.version>2.2</version.maven.plugin.version>
