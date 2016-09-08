@@ -47,8 +47,11 @@ public final class XMLStreamWriterUtils {
 	private static final AtomicInteger	counter					= new AtomicInteger(0);
 	private static final String			NAMESPACE_PREFIX_BASE	= "ns";
 
-	public static void writeXMLElementTag(final XMLStreamWriter writer, final URI uri, final Map<String, String> namespacesPrefixesMap,
-			final Map<String, String> nameMap, final boolean isElementOpen) throws XMLStreamException {
+	public static void writeXMLElementTag(final XMLStreamWriter writer,
+	                                      final URI uri,
+	                                      final Map<String, String> namespacesPrefixesMap,
+	                                      final Map<String, String> nameMap,
+	                                      final boolean isElementOpen) throws XMLStreamException {
 
 		if (uri.hasNamespaceURI()) {
 
@@ -79,8 +82,11 @@ public final class XMLStreamWriterUtils {
 		}
 	}
 
-	public static void writeXMLAttribute(final XMLStreamWriter writer, final URI uri, final String value,
-			final Map<String, String> namespacesPrefixesMap, final Map<String, String> nameMap) throws XMLStreamException {
+	public static void writeXMLAttribute(final XMLStreamWriter writer,
+	                                     final URI uri,
+	                                     final String value,
+	                                     final Map<String, String> namespacesPrefixesMap,
+	                                     final Map<String, String> nameMap) throws XMLStreamException {
 
 		if (uri.hasNamespaceURI()) {
 
@@ -94,7 +100,8 @@ public final class XMLStreamWriterUtils {
 		}
 	}
 
-	public static String getPrefix(final String namespace, final Map<String, String> namespacesPrefixesMap) {
+	public static String getPrefix(final String namespace,
+	                               final Map<String, String> namespacesPrefixesMap) {
 
 		if (!namespacesPrefixesMap.containsKey(namespace)) {
 
@@ -104,7 +111,8 @@ public final class XMLStreamWriterUtils {
 		return namespacesPrefixesMap.get(namespace);
 	}
 
-	private static String createXMLName(final URI uri, final Map<String, String> nameMap) {
+	private static String createXMLName(final URI uri,
+	                                    final Map<String, String> nameMap) {
 
 		if (!uri.hasLocalName()) {
 
