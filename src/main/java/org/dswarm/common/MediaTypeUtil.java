@@ -50,6 +50,9 @@ public class MediaTypeUtil {
 	public static final MediaType N3_TYPE = new MediaType("text", "n3");
 	public static final String N3 = "text/n3";
 	public static final String N3_FILE_EXTENSION = "n3";
+	public static final MediaType SOLR_UPDATE_XML_TYPE = new MediaType("application", "solr+update+xml");
+	public static final String SOLR_UPDATE_XML = "application/solr+update+xml";
+	public static final String SOLR_UPDATE_XML_FILE_EXTENSION = "xml";
 
 	/**
 	 * Hint: There is no LD+JSON parser in jena RIOT, maybe use this one if required:
