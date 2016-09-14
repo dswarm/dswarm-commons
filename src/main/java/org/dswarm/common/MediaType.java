@@ -28,7 +28,8 @@ public enum MediaType {
 	RDFXML(MediaTypeUtil.RDF_XML_TYPE, MediaTypeUtil.RDF_XML, MediaTypeUtil.RDF_XML_FILE_EXTENSION),
 	RDFTHRIFT(MediaTypeUtil.RDF_THRIFT_TYPE, MediaTypeUtil.RDF_THRIFT, MediaTypeUtil.RDF_THRIFT_FILE_EXTENSION),
 	N3(MediaTypeUtil.N3_TYPE, MediaTypeUtil.N3, MediaTypeUtil.N3_FILE_EXTENSION),
-	JSONLD(MediaTypeUtil.JSONLD_TYPE, MediaTypeUtil.JSONLD, MediaTypeUtil.JSONLD_FILE_EXTENSION);
+	JSONLD(MediaTypeUtil.JSONLD_TYPE, MediaTypeUtil.JSONLD, MediaTypeUtil.JSONLD_FILE_EXTENSION),
+	SOLRUPDATEXML(MediaTypeUtil.SOLR_UPDATE_XML_TYPE, MediaTypeUtil.SOLR_UPDATE_XML, MediaTypeUtil.SOLR_UPDATE_XML_FILE_EXTENSION);
 
 	private final javax.ws.rs.core.MediaType mediaType;
 
