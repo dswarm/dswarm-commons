@@ -53,6 +53,12 @@ public class MediaTypeUtil {
 	public static final MediaType SOLR_UPDATE_XML_TYPE = new MediaType("application", "solr+update+xml");
 	public static final String SOLR_UPDATE_XML = "application/solr+update+xml";
 	public static final String SOLR_UPDATE_XML_FILE_EXTENSION = "xml";
+	public static final MediaType GDM_JSON_TYPE = new MediaType("application", "gdm+json");
+	public static final String GDM_JSON = "application/gdm+json";
+	public static final String GDM_JSON_FILE_EXTENSION = "json";
+	public static final MediaType GDM_COMPACT_JSON_TYPE = new MediaType("application", "gdm+compact+json");
+	public static final String GDM_COMPACT_JSON = "application/gdm+compact+json";
+	public static final String GDM_COMPACT_JSON_FILE_EXTENSION = "json";
 
 	/**
 	 * Hint: There is no LD+JSON parser in jena RIOT, maybe use this one if required:

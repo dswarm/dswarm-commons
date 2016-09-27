@@ -19,7 +19,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.dswarm</groupId>
   <artifactId>common</artifactId>
-  <version>0.0.3.2-SNAPSHOT</version>
+  <version>0.0.3.3-SNAPSHOT</version>
 
   <name>d:swarm - common</name>
   <description>utils commonly used</description>
