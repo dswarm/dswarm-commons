@@ -65,6 +65,9 @@ public class MediaTypeUtil {
 	public static final MediaType GDM_SIMPLE_JSON_TYPE = new MediaType("application", "gdm+simple+json");
 	public static final String GDM_SIMPLE_JSON = "application/gdm+simple+json";
 	public static final String GDM_SIMPLE_JSON_FILE_EXTENSION = "json";
+	public static final MediaType GDM_SIMPLE_SHORT_JSON_TYPE = new MediaType("application", "gdm+simple+short+json");
+	public static final String GDM_SIMPLE_SHORT_JSON = "application/gdm+simple+short+json";
+	public static final String GDM_SIMPLE_SHORT_JSON_FILE_EXTENSION = "json";
 
 	/**
 	 * Hint: There is no LD+JSON parser in jena RIOT, maybe use this one if required:
