@@ -68,6 +68,12 @@ public class MediaTypeUtil {
 	public static final MediaType GDM_SIMPLE_SHORT_JSON_TYPE = new MediaType("application", "gdm+simple+short+json");
 	public static final String GDM_SIMPLE_SHORT_JSON = "application/gdm+simple+short+json";
 	public static final String GDM_SIMPLE_SHORT_JSON_FILE_EXTENSION = "json";
+	/**
+	 * JSC = json schema conform
+	 */
+	public static final MediaType JSC_JSON_TYPE = new MediaType("application", "jsc+json");
+	public static final String JSC_JSON = "application/jsc+json";
+	public static final String JSC_JSON_FILE_EXTENSION = "json";
 	public static final String JSON_FILE_EXTENSION = "json";
 	public static final String XML_FILE_EXTENSION = "xml";
 
