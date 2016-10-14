@@ -70,10 +70,28 @@ public class MediaTypeUtil {
 	public static final String GDM_SIMPLE_SHORT_JSON_FILE_EXTENSION = "json";
 	/**
 	 * JSC = json schema conform
+	 * LDJ = line delimited JSON
 	 */
+	public static final MediaType JSC_LDJ_TYPE = new MediaType("application", "jsc+ldj");
+	public static final String JSC_LDJ = "application/jsc+ldj";
+	public static final String JSC_LDJ_FILE_EXTENSION = "ldj";
+
+	public static final MediaType GDM_LDJ_TYPE = new MediaType("application", "gdm+ldj");
+	public static final String GDM_LDJ = "application/gdm+ldj";
+	public static final String GDM_LDJ_FILE_EXTENSION = "ldj";
+	public static final MediaType GDM_COMPACT_LDJ_TYPE = new MediaType("application", "gdm+compact+ldj");
+	public static final String GDM_COMPACT_LDJ = "application/gdm+compact+ldj";
+	public static final String GDM_COMPACT_LDJ_FILE_EXTENSION = "ldj";
+	public static final MediaType GDM_SIMPLE_LDJ_TYPE = new MediaType("application", "gdm+simple+ldj");
+	public static final String GDM_SIMPLE_LDJ = "application/gdm+simple+ldj";
+	public static final String GDM_SIMPLE_LDJ_FILE_EXTENSION = "ldj";
+	public static final MediaType GDM_SIMPLE_SHORT_LDJ_TYPE = new MediaType("application", "gdm+simple+short+ldj");
+	public static final String GDM_SIMPLE_SHORT_LDJ = "application/gdm+simple+short+ldj";
+	public static final String GDM_SIMPLE_SHORT_LDJ_FILE_EXTENSION = "ldj";
 	public static final MediaType JSC_JSON_TYPE = new MediaType("application", "jsc+json");
 	public static final String JSC_JSON = "application/jsc+json";
 	public static final String JSC_JSON_FILE_EXTENSION = "json";
+
 	public static final String JSON_FILE_EXTENSION = "json";
 	public static final String XML_FILE_EXTENSION = "xml";
 
