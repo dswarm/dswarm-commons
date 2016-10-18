@@ -53,6 +53,47 @@ public class MediaTypeUtil {
 	public static final MediaType SOLR_UPDATE_XML_TYPE = new MediaType("application", "solr+update+xml");
 	public static final String SOLR_UPDATE_XML = "application/solr+update+xml";
 	public static final String SOLR_UPDATE_XML_FILE_EXTENSION = "xml";
+	public static final MediaType GDM_JSON_TYPE = new MediaType("application", "gdm+json");
+	public static final String GDM_JSON = "application/gdm+json";
+	public static final String GDM_JSON_FILE_EXTENSION = "json";
+	public static final MediaType GDM_COMPACT_JSON_TYPE = new MediaType("application", "gdm+compact+json");
+	public static final String GDM_COMPACT_JSON = "application/gdm+compact+json";
+	public static final String GDM_COMPACT_JSON_FILE_EXTENSION = "json";
+	public static final MediaType GDM_COMPACT_FE_JSON_TYPE = new MediaType("application", "gdm+compact+fe+json");
+	public static final String GDM_COMPACT_FE_JSON = "application/gdm+compact+fe+json";
+	public static final String GDM_COMPACT_FE_JSON_FILE_EXTENSION = "json";
+	public static final MediaType GDM_SIMPLE_JSON_TYPE = new MediaType("application", "gdm+simple+json");
+	public static final String GDM_SIMPLE_JSON = "application/gdm+simple+json";
+	public static final String GDM_SIMPLE_JSON_FILE_EXTENSION = "json";
+	public static final MediaType GDM_SIMPLE_SHORT_JSON_TYPE = new MediaType("application", "gdm+simple+short+json");
+	public static final String GDM_SIMPLE_SHORT_JSON = "application/gdm+simple+short+json";
+	public static final String GDM_SIMPLE_SHORT_JSON_FILE_EXTENSION = "json";
+	/**
+	 * JSC = json schema conform
+	 * LDJ = line delimited JSON
+	 */
+	public static final MediaType JSC_LDJ_TYPE = new MediaType("application", "jsc+ldj");
+	public static final String JSC_LDJ = "application/jsc+ldj";
+	public static final String JSC_LDJ_FILE_EXTENSION = "ldj";
+
+	public static final MediaType GDM_LDJ_TYPE = new MediaType("application", "gdm+ldj");
+	public static final String GDM_LDJ = "application/gdm+ldj";
+	public static final String GDM_LDJ_FILE_EXTENSION = "ldj";
+	public static final MediaType GDM_COMPACT_LDJ_TYPE = new MediaType("application", "gdm+compact+ldj");
+	public static final String GDM_COMPACT_LDJ = "application/gdm+compact+ldj";
+	public static final String GDM_COMPACT_LDJ_FILE_EXTENSION = "ldj";
+	public static final MediaType GDM_SIMPLE_LDJ_TYPE = new MediaType("application", "gdm+simple+ldj");
+	public static final String GDM_SIMPLE_LDJ = "application/gdm+simple+ldj";
+	public static final String GDM_SIMPLE_LDJ_FILE_EXTENSION = "ldj";
+	public static final MediaType GDM_SIMPLE_SHORT_LDJ_TYPE = new MediaType("application", "gdm+simple+short+ldj");
+	public static final String GDM_SIMPLE_SHORT_LDJ = "application/gdm+simple+short+ldj";
+	public static final String GDM_SIMPLE_SHORT_LDJ_FILE_EXTENSION = "ldj";
+	public static final MediaType JSC_JSON_TYPE = new MediaType("application", "jsc+json");
+	public static final String JSC_JSON = "application/jsc+json";
+	public static final String JSC_JSON_FILE_EXTENSION = "json";
+
+	public static final String JSON_FILE_EXTENSION = "json";
+	public static final String XML_FILE_EXTENSION = "xml";
 
 	/**
 	 * Hint: There is no LD+JSON parser in jena RIOT, maybe use this one if required:
