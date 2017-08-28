@@ -19,7 +19,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.dswarm</groupId>
   <artifactId>common</artifactId>
-  <version>0.0.3.3-SNAPSHOT</version>
+  <version>0.0.3.4-SNAPSHOT</version>
 
   <name>d:swarm - common</name>
   <description>utils commonly used</description>
@@ -33,25 +33,25 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.source.version>1.8</java.source.version>
 		<java.target.version>1.8</java.target.version>
-		<maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
-		<maven-assembly-plugin.version>2.6</maven-assembly-plugin.version>
-		<maven-resources-plugin.version>3.0.1</maven-resources-plugin.version>
+		<maven-compiler-plugin.version>3.6.2</maven-compiler-plugin.version>
+		<maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
+		<maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
 		<maven-install-plugin.version>2.5.2</maven-install-plugin.version>
-		<maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
+		<maven-surefire-plugin.version>2.20</maven-surefire-plugin.version>
 		<maven-clean-plugin.version>3.0.0</maven-clean-plugin.version>
 		<maven-release-plugin.version>2.5.3</maven-release-plugin.version>
-		<javax.ws.rs-api.version>2.0.1</javax.ws.rs-api.version>
-		<slf4j-api.version>1.7.21</slf4j-api.version>
-		<jena.version>3.1.0</jena.version>
-		<version.guava>19.0</version.guava>
+		<javax.ws.rs-api.version>2.1</javax.ws.rs-api.version>
+		<slf4j-api.version>1.7.25</slf4j-api.version>
+		<jena.version>3.4.0</jena.version>
+		<version.guava>23.0</version.guava>
 		<version.jackson>2.7.1</version.jackson>
 		<junit.version>4.12</junit.version>
-		<version.apache.commons>3.4</version.apache.commons>
-		<version.maven.plugin.version>2.2</version.maven.plugin.version>
+		<version.apache.commons>3.6</version.apache.commons>
+		<version.maven.plugin.version>2.4</version.maven.plugin.version>
 		<version.maven.plugin.jar>3.0.2</version.maven.plugin.jar>
-		<version.maven.plugin.site>3.5.1</version.maven.plugin.site>
+		<version.maven.plugin.site>3.6</version.maven.plugin.site>
 		<version.maven.plugin.deploy>2.8.2</version.maven.plugin.deploy>
-		<version.jsonassert>1.3.0</version.jsonassert>
+		<version.jsonassert>1.5.0</version.jsonassert>
 		<aalto-xml.version>1.0.0</aalto-xml.version>
 	</properties>
 
